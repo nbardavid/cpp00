@@ -6,37 +6,50 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:34:31 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/15 16:22:34 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:53:45 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONE_HPP
 # define PHONE_HPP
 
-#include <iostream>
 #include <algorithm>
 #include <cctype>
 #include <cstring>
 #include <string>
+#include <sstream>
+#include <iomanip>
+#include <iostream>
 
 class Contact {
+private:
+	std::string name;
+	std::string lastname;
+	std::string nickname;
+	std::string number;
+	std::string darkest_secret;
 public:
-	std::string nom;
-	std::string numero;    
-    Contact(std::string nom, std::string numero) : nom(nom), numero(numero) {
-        std::cout << "Création du contact : " << nom << " avec le numéro " << numero << std::endl;
-	}
+	Contact();
+	~Contact();
+	void PrintContact();
+	void SetFirstName(std::string str);
+	void SetLastName(std::string str);
+	void SetNickname(std::string str);
+	void SetNumber(std::string str);
+	void SetSecret(std::string str);
+	std::string Get(std::string string);
 };
 
 class PhoneBook {
-public:
+private:
 	int contactActuel;
 	Contact contacts[8];
+public:
 	PhoneBook();
-    void ajouterContact(const Contact nouveauContact){
-		contacts[contactActuel] = nouveauContact;
-		contactActuel = (contactActuel + 1) % 8; 
-	}
+	~PhoneBook();
+    void ajouterContact(const Contact nouveauContact);
+    void Add();
+	Contact *GetContacts();
 };
 
 #endif

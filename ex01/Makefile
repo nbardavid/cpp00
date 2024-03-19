@@ -2,7 +2,7 @@ CXX=g++
 CXXFLAGS=-std=c++98 -Wall -Wextra -Werror
 SRCDIR=src
 OBJDIR=obj
-SRCS=$(SRCDIR)/main.cpp
+SRCS=$(SRCDIR)/main.cpp $(SRCDIR)/PhoneBook.class.cpp $(SRCDIR)/Contact.class.cpp
 OBJS=$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 TARGET=phonebook
 
