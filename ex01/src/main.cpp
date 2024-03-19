@@ -6,25 +6,16 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:33:36 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/19 14:57:02 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:55:28 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/phone.hpp"
 
-PhoneBook init_book(void){
+int main(void){
 	PhoneBook book;
-
-	book.contactActuel = 0;
-	return (book);
-}
-
-int main(int argc, char **argv){
-	PhoneBook book = init_book();
 	std::string input;
 
-	(void)argc;
-	(void)argv;
 	while(1)
 	{
 		std::getline(std::cin, input);
@@ -32,7 +23,8 @@ int main(int argc, char **argv){
 			book.Add();
 		else if (input == "SEARCH")
 			book.Search();
-		std::cout << "\n";
+		else if (input == "EXIT")
+			break;
 	}
 	return(0);
 }
