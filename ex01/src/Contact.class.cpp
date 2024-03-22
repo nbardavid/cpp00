@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 09:50:38 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/19 17:28:45 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/22 14:17:44 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,33 +29,33 @@ std::string Contact::TruncateField(const std::string& field) {
 }
 
 void Contact::PrintContactFull() {
-	std::cout << "FirstName: " << this->name << std::endl;
-	std::cout << "LastName: " << this->lastname << std::endl;
-	std::cout << "Nickname: " << this->nickname << std::endl;
-	std::cout << "Phone Number: " << this->number << std::endl;
-	std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
+	std::cout << "FirstName: " << this->_name << std::endl;
+	std::cout << "LastName: " << this->_lastname << std::endl;
+	std::cout << "Nickname: " << this->_nickname << std::endl;
+	std::cout << "Phone Number: " << this->_number << std::endl;
+	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
 }
 
 void Contact::PrintContact() {
     std::stringstream ss;
 
-    ss << std::right << std::setw(10) << TruncateField(this->name);
+    ss << std::right << std::setw(10) << TruncateField(this->_name);
     std::cout << ss.str() << "|";
     ss.str("");
     ss.clear();
-    ss << std::right << std::setw(10) << TruncateField(this->lastname);
+    ss << std::right << std::setw(10) << TruncateField(this->_lastname);
     std::cout << ss.str() << "|";
     ss.str("");
     ss.clear();
-    ss << std::right << std::setw(10) << TruncateField(this->nickname);
+    ss << std::right << std::setw(10) << TruncateField(this->_nickname);
     std::cout << ss.str() << "|";
     ss.str("");
     ss.clear();
-    ss << std::right << std::setw(10) << TruncateField(this->number);
+    ss << std::right << std::setw(10) << TruncateField(this->_number);
     std::cout << ss.str() << "|";
     ss.str("");
     ss.clear();
-    ss << std::right << std::setw(10) << TruncateField(this->darkest_secret);
+    ss << std::right << std::setw(10) << TruncateField(this->_darkest_secret);
     std::cout << ss.str() << "|";
     ss.str("");
     ss.clear();
@@ -63,39 +63,39 @@ void Contact::PrintContact() {
 }
 
 void Contact::SetFirstName(std::string str){
-	this->name = str;
+	this->_name = str;
 }
 
 void Contact::SetLastName(std::string str){
-	this->lastname = str;
+	this->_lastname = str;
 }
 
 void Contact::SetNumber(std::string str){
-	this->number = str;
+	this->_number = str;
 }
 
 void Contact::SetNickname(std::string str){
-	this->nickname = str;
+	this->_nickname = str;
 }
 
 void Contact::SetSecret(std::string str){
-	this->darkest_secret = str;
+	this->_darkest_secret = str;
 }
 
 int Contact::Empty(){
-	return(this->name.empty());
+	return(this->_name.empty());
 }
 
 std::string Contact::Get(std::string string){
 	if (string == "firstname")
-		return (this->name);
-	if (string == "lastname")
-		return (this->lastname);
-	if (string == "nickname")
-		return (this->nickname);
-	if (string == "number")
-		return (this->number);
+		return (this->_name);
+	if (string == "_lastname")
+		return (this->_lastname);
+	if (string == "_nickname")
+		return (this->_nickname);
+	if (string == "_number")
+		return (this->_number);
 	if (string == "secret")
-		return (this->darkest_secret);
+		return (this->_darkest_secret);
 	return (NULL);
 }

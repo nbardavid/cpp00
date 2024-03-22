@@ -6,22 +6,22 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 20:05:29 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/19 20:07:03 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/22 14:19:07 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
 
-#include"phone.hpp"
+#include "phone.hpp"
 
 class Contact {
 private:
-	std::string name;
-	std::string lastname;
-	std::string nickname;
-	std::string number;
-	std::string darkest_secret;
+	std::string _name;
+	std::string _lastname;
+	std::string _nickname;
+	std::string _number;
+	std::string _darkest_secret;
 public:
 	Contact();
 	~Contact();

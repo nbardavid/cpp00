@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 09:46:47 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/19 19:48:57 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/22 14:16:28 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ void PhoneBook::Add(){
 	Contact NewContact;
 	std::string string;
 
-	std::cout << "First name of Contact : ";
+	std::cout << "First _name of Contact : ";
 	std::getline(std::cin, string);
 	NewContact.SetFirstName(string);
-	std::cout << "Last name of Contact : ";
+	std::cout << "Last _name of Contact : ";
 	std::getline(std::cin, string);
 	NewContact.SetLastName(string);
 	std::cout << "Nickname of Contact : ";
 	std::getline(std::cin, string);
 	NewContact.SetNickname(string);
-	std::cout << "Phone number : ";
+	std::cout << "Phone _number : ";
 	std::getline(std::cin, string);
 	NewContact.SetNumber(string);
 	std::cout << "Darkest Secret : ";
@@ -74,7 +74,7 @@ void PhoneBook::Search(){
 	if (!(iss >> i && !(iss >> extra)))
 		std::cerr << "Wrong argmument : Only numbers (int range) are accepted" << std::endl;
 	if (this->contacts[i].Empty() == true || i > 7)
-		std::cout << "There is no contact number " << i << std::endl;
+		std::cout << "There is no contact _number " << i << std::endl;
 	else
 		this->contacts[i].PrintContactFull();
 }
